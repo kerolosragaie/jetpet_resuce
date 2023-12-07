@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.core.components
+package hoods.com.jetpetrescue.features.home.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun TopBar(
+fun HomeTopBar(
     onSwitchToggle: () -> Unit,
 ) {
     Row(
@@ -60,5 +60,5 @@ fun TopBar(
 @Preview(showBackground = true)
 @Composable
 fun PrevTopBar() {
-    TopBar{}
+    HomeTopBar{}
 }

@@ -6,8 +6,8 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import hoods.com.jetpetrescue.core.components.TopBar
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
+import hoods.com.jetpetrescue.features.home.components.HomeTopBar
 import hoods.com.jetpetrescue.features.home.components.PetInfoItem
 
 @Composable
@@ -19,7 +19,7 @@ fun HomeScreen(
 
     Scaffold(
         topBar = {
-            TopBar(onSwitchToggle = onSwitchToggle)
+            HomeTopBar(onSwitchToggle = onSwitchToggle)
         },
     ) { paddingValues ->
         LazyColumn(
