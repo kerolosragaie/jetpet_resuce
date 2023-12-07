@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,11 +23,13 @@ fun TopBar(
 ) {
     Row(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier
+                .weight(3f),
         ) {
             Text(
                 text = "Hey Likander",
@@ -38,17 +41,15 @@ fun TopBar(
             Text(
                 text = "Find a new friend near you to adopt!",
                 textAlign = TextAlign.Start,
-                style = MaterialTheme.typography.subtitle1,
+                style = MaterialTheme.typography.subtitle2,
                 color = MaterialTheme.colors.onSurface,
             )
         }
         Row(
             modifier=Modifier
-                .fillMaxWidth()
-                .padding(
-                    top = 24.dp,
-                    end = 20.dp,
-                ),
+                .weight(1f)
+                .align(Alignment.CenterVertically),
+            horizontalArrangement = Arrangement.Center,
         ){
             ThemeSwitcher(onSwitchToggle=onSwitchToggle)
         }
