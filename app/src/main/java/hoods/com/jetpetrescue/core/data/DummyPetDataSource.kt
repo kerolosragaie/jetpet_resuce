@@ -1,17 +1,17 @@
-package hoods.com.jetpetrescue.data
+package hoods.com.jetpetrescue.core.data
 
 
 import hoods.com.jetpetrescue.R
-import hoods.com.jetpetrescue.data.model.Owner
-import hoods.com.jetpetrescue.data.model.Pet
+import hoods.com.jetpetrescue.core.data.model.Owner
+import hoods.com.jetpetrescue.core.data.model.Pet
 
 object DummyPetDataSource {
     private val owner = listOf(
-        Owner(name = "Said", "Developer", R.drawable.blue_dog),
-        Owner(name = "Said", "Engineer", R.drawable.blue_dog),
-        Owner(name = "Said", "Economist", R.drawable.blue_dog),
-        Owner(name = "Said", "Teacher", R.drawable.blue_dog),
-        Owner(name = "Said", "Scientist", R.drawable.blue_dog),
+        Owner(name = "Kerollos", "Developer", R.drawable.blue_dog),
+        Owner(name = "Likander", "Engineer", R.drawable.blue_dog),
+        Owner(name = "Sara", "Economist", R.drawable.blue_dog),
+        Owner(name = "Oujie", "Teacher", R.drawable.blue_dog),
+        Owner(name = "Rana", "Scientist", R.drawable.blue_dog),
     )
     val dogList = listOf(
         Pet(

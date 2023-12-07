@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.ui.theme
+package hoods.com.jetpetrescue.core.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

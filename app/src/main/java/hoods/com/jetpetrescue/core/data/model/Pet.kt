@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.data.model
+package hoods.com.jetpetrescue.core.data.model
 
 import androidx.annotation.DrawableRes
 
