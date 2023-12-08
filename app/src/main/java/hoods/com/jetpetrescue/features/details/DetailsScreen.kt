@@ -6,7 +6,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
 import hoods.com.jetpetrescue.features.details.components.DetailsTopBar
-import hoods.com.jetpetrescue.features.details.components.DetailsBasicInfot
+import hoods.com.jetpetrescue.features.details.components.PetBasicInfoItem
+import hoods.com.jetpetrescue.features.details.components.PetDetailsItem
+import hoods.com.jetpetrescue.features.details.components.PetStoryItem
 
 @Composable
 fun DetailsScreen(
@@ -24,9 +26,13 @@ fun DetailsScreen(
     ) { padding ->
         LazyColumn(contentPadding = padding) {
             item {
-                DetailsBasicInfot(
-                    pet = pet
-                )
+                PetBasicInfoItem(pet = pet)
+            }
+            item {
+                PetStoryItem(description=pet.description)
+            }
+            item {
+                PetDetailsItem(pet = pet)
             }
         }
     }

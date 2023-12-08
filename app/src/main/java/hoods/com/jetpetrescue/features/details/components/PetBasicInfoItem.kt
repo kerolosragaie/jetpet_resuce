@@ -25,10 +25,10 @@ import hoods.com.jetpetrescue.core.data.model.Pet
 
 
 @Composable
-fun DetailsBasicInfo(
+fun PetBasicInfoItem(
     pet: Pet,
 ) {
-    Column {
+    Column{
         Image(
             painter = painterResource(id = pet.image),
             contentDescription = null,
@@ -92,7 +92,7 @@ fun DetailsBasicInfo(
 @Preview(showSystemUi = true)
 @Composable
 fun PrevTopBasicInfo() {
-    DetailsBasicInfo(
+    PetBasicInfoItem(
         pet = DummyPetDataSource.dogList.random()
     )
 }
