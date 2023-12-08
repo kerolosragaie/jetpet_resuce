@@ -1,24 +1,34 @@
 package hoods.com.jetpetrescue.features.details
 
-import android.annotation.SuppressLint
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import hoods.com.jetpetrescue.core.data.DummyPetDataSource
 import hoods.com.jetpetrescue.features.details.components.DetailsTopBar
+import hoods.com.jetpetrescue.features.details.components.DetailsBasicInfot
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun DetailsScreen(
+    index: Int,
     onClickArrowBack: () -> Unit,
 ) {
+    val pet = DummyPetDataSource.dogList[index]
+
     Scaffold(
         topBar = {
             DetailsTopBar(
                 onClickArrowBack = onClickArrowBack
             )
         },
-    ) { paddingValues ->
-
+    ) { padding ->
+        LazyColumn(contentPadding = padding) {
+            item {
+                DetailsBasicInfot(
+                    pet = pet
+                )
+            }
+        }
     }
 }
 
@@ -26,5 +36,5 @@ fun DetailsScreen(
 @Preview(showSystemUi = true)
 @Composable
 fun PrevDetailsScreen() {
-    DetailsScreen(){}
+    DetailsScreen(index = 0) {}
 }

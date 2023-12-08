@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -25,7 +24,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import hoods.com.jetpetrescue.R
+import hoods.com.jetpetrescue.core.components.GenderTag
+import hoods.com.jetpetrescue.core.components.LocationTag
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
 import hoods.com.jetpetrescue.core.data.model.Pet
 
@@ -80,27 +80,9 @@ fun PetInfoItem(
                         style = MaterialTheme.typography.caption,
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Row(
-                        verticalAlignment = Alignment.Bottom,
-                    ) {
-                        Icon(
-                            modifier = Modifier.size(16.dp),
-                            painter = painterResource(id = R.drawable.ic_location),
-                            contentDescription = null,
-                            tint = MaterialTheme.colors.error
-                        )
-                        Text(
-                            text = pet.location,
-                            modifier = Modifier.padding(
-                                start = 8.dp,
-                                top = 0.dp,
-                                end = 12.dp,
-                                bottom = 0.dp,
-                            ),
-                            color = MaterialTheme.colors.onSurface,
-                            style = MaterialTheme.typography.caption,
-                        )
-                    }
+                    LocationTag(
+                        location = pet.location
+                    )
                 }
 
             }

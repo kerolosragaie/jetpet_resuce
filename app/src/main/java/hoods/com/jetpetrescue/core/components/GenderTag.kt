@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.features.home.components
+package hoods.com.jetpetrescue.core.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
