@@ -32,7 +32,7 @@ fun HomeTopBar(
                 .weight(3f),
         ) {
             Text(
-                text = "Hey Likander",
+                text = "Hey Likander,",
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.h5,
                 color = MaterialTheme.colors.onSurface,
