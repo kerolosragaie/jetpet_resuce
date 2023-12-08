@@ -24,7 +24,7 @@ import hoods.com.jetpetrescue.core.data.DummyPetDataSource
 import hoods.com.jetpetrescue.core.data.model.Pet
 
 @Composable
-fun PetDetailsItem(pet: Pet) {
+fun PetInfoCard(pet: Pet) {
     Column {
         Spacer(modifier = Modifier.height(24.dp))
 
@@ -80,8 +80,8 @@ fun InfoCard(
     secondaryText: String,
 ) {
     Surface(
-        shape = MaterialTheme.shapes.medium,
         modifier = modifier,
+        shape = MaterialTheme.shapes.medium,
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
@@ -106,10 +106,10 @@ fun InfoCard(
 }
 
 
-@Preview(showSystemUi = true)
+@Preview(showBackground = true)
 @Composable
 fun PrevPetDetailsItem() {
-    PetDetailsItem(
+    PetInfoCard(
         pet = DummyPetDataSource.dogList.random()
     )
 }
