@@ -21,13 +21,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             var currentScreen by remember { mutableStateOf(Screen.Home) }
             var selectedIndex by remember { mutableStateOf(-1) }
+            var isDarkTheme by remember {mutableStateOf(false) }
 
-            JetPetTheme {
+            JetPetTheme(
+                darkTheme = isDarkTheme,
+            ){
                 when (currentScreen) {
                     Screen.Home -> {
                         HomeScreen(
                             onSwitchToggle = {
-
+                                isDarkTheme = !isDarkTheme
                             },
                             onPetItemClicked = { index ->
                                 currentScreen = Screen.Details
