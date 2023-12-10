@@ -88,6 +88,7 @@ fun InfoCard(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+            //# Better to do then change alpha like: Color.Black.copy(0.2f)
             CompositionLocalProvider(
                 LocalContentAlpha provides ContentAlpha.disabled
             ) {
@@ -97,7 +98,7 @@ fun InfoCard(
                 text = secondaryText,
                 style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Medium,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
             )
         }
 
