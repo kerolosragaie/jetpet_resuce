@@ -6,7 +6,7 @@ import hoods.com.jetpetrescue.core.data.model.Owner
 import hoods.com.jetpetrescue.core.data.model.Pet
 
 object DummyPetDataSource {
-    private val owner = listOf(
+     private val ownersList = listOf(
         Owner(name = "Kerollos", "Developer", R.drawable.blue_dog),
         Owner(name = "Likander", "Engineer", R.drawable.blue_dog),
         Owner(name = "Sara", "Economist", R.drawable.blue_dog),
@@ -24,7 +24,7 @@ object DummyPetDataSource {
             location = "Toronto CA",
             image = R.drawable.orange_dog,
             description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
-            owner = owner[0]
+            owner = ownersList[0]
         ),
         Pet(
             id = 1,
@@ -36,7 +36,7 @@ object DummyPetDataSource {
             location = "Toronto CA",
             image = R.drawable.blue_dog,
             description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
-            owner = owner[1]
+            owner = ownersList[1]
         ),
         Pet(
             id = 2,
@@ -48,7 +48,7 @@ object DummyPetDataSource {
             location = "Toronto CA",
             image = R.drawable.red_dog,
             description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
-            owner = owner[2]
+            owner = ownersList[2]
         ),
         Pet(
             id = 3,
@@ -60,7 +60,7 @@ object DummyPetDataSource {
             location = "Toronto CA",
             image = R.drawable.yellow_dog,
             description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
-            owner = owner[3]
+            owner = ownersList[3]
         ),
         Pet(
             id = 4,
@@ -72,7 +72,7 @@ object DummyPetDataSource {
             location = "Toronto CA",
             image = R.drawable.white_dog,
             description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
-            owner = owner[4]
+            owner = ownersList[4]
         )
     )
 }

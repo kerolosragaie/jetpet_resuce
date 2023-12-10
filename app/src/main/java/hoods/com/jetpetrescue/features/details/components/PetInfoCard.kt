@@ -26,7 +26,6 @@ import hoods.com.jetpetrescue.core.data.model.Pet
 @Composable
 fun PetInfoCard(pet: Pet) {
     Column {
-        Spacer(modifier = Modifier.height(24.dp))
 
         Text(
             text = "Pet info",
@@ -39,7 +38,7 @@ fun PetInfoCard(pet: Pet) {
             textAlign = TextAlign.Start
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -74,7 +73,7 @@ fun PetInfoCard(pet: Pet) {
 }
 
 @Composable
-fun InfoCard(
+private fun InfoCard(
     modifier: Modifier = Modifier,
     primaryText: String,
     secondaryText: String,

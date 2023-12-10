@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
 import hoods.com.jetpetrescue.features.details.components.DetailsTopBar
+import hoods.com.jetpetrescue.features.details.components.OwnerInfoCard
 import hoods.com.jetpetrescue.features.details.components.PetBasicInfoItem
 import hoods.com.jetpetrescue.features.details.components.PetInfoCard
 import hoods.com.jetpetrescue.features.details.components.PetStoryItem
@@ -33,6 +34,11 @@ fun DetailsScreen(
             }
             item {
                 PetInfoCard(pet = pet)
+            }
+            item {
+                OwnerInfoCard(owner = pet.owner){
+
+                }
             }
         }
     }
