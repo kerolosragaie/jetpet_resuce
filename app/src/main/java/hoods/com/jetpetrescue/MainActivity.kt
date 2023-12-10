@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetPetTheme {
-                HomeScreen(
+               HomeScreen(
                     onSwitchToggle = {
 
                     },
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showSystemUi = true)
 @Composable
 fun DefaultPreview() {
     JetPetTheme {
