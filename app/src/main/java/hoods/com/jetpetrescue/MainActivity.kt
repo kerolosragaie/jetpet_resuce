@@ -45,7 +45,9 @@ class MainActivity : ComponentActivity() {
                             onClickArrowBack = {
                                 currentScreen = Screen.Home
                             },
-                            onClickAdopt = {},
+                            onClickAdopt = {
+
+                            },
                         )
                     }
                 }
