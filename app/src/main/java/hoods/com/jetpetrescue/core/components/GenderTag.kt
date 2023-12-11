@@ -33,7 +33,7 @@ fun GenderTag(gender:String="Male",modifier: Modifier) {
             text=gender,
             modifier = Modifier.padding(vertical = 8.dp, horizontal = 12.dp),
             style = MaterialTheme.typography.caption,
-            color = color,
+            color = MaterialTheme.colors.onSurface,
             fontWeight = FontWeight.SemiBold,
         )
     }
