@@ -8,4 +8,6 @@ object RemoteConstants {
     const val SECRET_KEY = "BMIEeG9tB6FAlL6wwGq8auyJ9i5hpG9JQwGxwee0"
     const val CLIENT_ID = "client_id"
     const val CLIENT_SECRET = "client_secret"
+    const val GRANT_TYPE = "grant_type"
+    const val CLIENT_CREDENTIALS = "client_Credentials"
 }

@@ -9,7 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
-import hoods.com.jetpetrescue.core.functions.Screen
+import hoods.com.jetpetrescue.core.utils.Screen
 import hoods.com.jetpetrescue.core.theme.JetPetTheme
 import hoods.com.jetpetrescue.features.home.presentation.screens.details.DetailsScreen
 
