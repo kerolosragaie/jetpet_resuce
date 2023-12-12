@@ -5,7 +5,7 @@ import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
 
-class AccessInterceptor(
+class AuthInterceptorImpl(
     private val accessTokenProvider: AccessTokenProvider
 ) : Interceptor {
 

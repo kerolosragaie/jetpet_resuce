@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object Graph {
-    lateinit var tokenStoragePreference: StoragePreference
+    private lateinit var tokenStoragePreference: StoragePreference
     lateinit var apiService: ApiService
 
     fun provide(context: Context) {
@@ -17,11 +17,12 @@ object Graph {
         apiService = provideApiService()
     }
 
-    private fun provideApiService(): ApiService = Retrofit
-        .Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(ApiService::class.java)
+    private fun provideApiService(): ApiService =
+        Retrofit
+            .Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiService::class.java)
 
 }
