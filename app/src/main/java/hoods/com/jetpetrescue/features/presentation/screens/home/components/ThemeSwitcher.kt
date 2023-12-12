@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.features.home.components
+package hoods.com.jetpetrescue.features.presentation.screens.home.components
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.size
