@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class PrimaryPhotoCroppedDto(
     @SerializedName("small")
-    val small: String = "",
+    val small: String ? = null,
     @SerializedName("medium")
-    val medium: String = "",
+    val medium: String ? = null,
     @SerializedName("large")
-    val large: String = "",
+    val large: String ? = null,
     @SerializedName("full")
-    val full: String = ""
+    val full: String ? = null,
 )

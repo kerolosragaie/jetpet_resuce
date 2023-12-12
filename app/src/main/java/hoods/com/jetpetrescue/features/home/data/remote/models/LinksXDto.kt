@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class LinksXDto(
     @SerializedName("next")
-    val next: NextDto = NextDto()
+    val next: NextDto ? = null,
 )

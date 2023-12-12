@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 
 data class AttributesDto(
     @SerializedName("spayed_neutered")
-    val spayedNeutered: Boolean = false,
+    val spayedNeutered: Boolean? = null,
     @SerializedName("house_trained")
-    val houseTrained: Boolean = false,
+    val houseTrained: Boolean ? = null,
     @SerializedName("declawed")
     val declawed: Boolean? = null,
     @SerializedName("special_needs")
-    val specialNeeds: Boolean = false,
+    val specialNeeds: Boolean? = null,
     @SerializedName("shots_current")
-    val shotsCurrent: Boolean = false
+    val shotsCurrent: Boolean ? = null,
 )

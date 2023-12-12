@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class AnimalsDto(
     @SerializedName("animals")
-    val animalDtos: List<AnimalDto> = listOf(),
+    val animalsDto: List<AnimalDto>? = null,
     @SerializedName("pagination")
-    val pagination: PaginationDto = PaginationDto()
+    val pagination: PaginationDto ? = null,
 )

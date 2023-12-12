@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class ContactDto(
     @SerializedName("email")
-    val email: String = "",
+    val email: String? = null,
     @SerializedName("phone")
     val phone: String? = null,
     @SerializedName("address")
-    val addressDto: AddressDto = AddressDto()
+    val addressDto: AddressDto? = null,
 )

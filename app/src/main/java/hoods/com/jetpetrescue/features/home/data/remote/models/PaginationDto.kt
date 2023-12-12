@@ -13,5 +13,5 @@ data class PaginationDto(
     @SerializedName("total_pages")
     val totalPages: Int = 0,
     @SerializedName("_links")
-    val links: LinksXDto = LinksXDto()
+    val links: LinksXDto ? = null,
 )

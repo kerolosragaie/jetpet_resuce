@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class LinksDto(
     @SerializedName("self")
-    val self: SelfDto = SelfDto(),
+    val self: SelfDto ? = null,
     @SerializedName("type")
-    val type: TypeDto = TypeDto(),
+    val type: TypeDto ? = null,
     @SerializedName("organization")
-    val organization: OrganizationDto = OrganizationDto()
+    val organization: OrganizationDto ? = null,
 )

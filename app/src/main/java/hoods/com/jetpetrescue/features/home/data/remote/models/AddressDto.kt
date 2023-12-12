@@ -9,11 +9,11 @@ data class AddressDto(
     @SerializedName("address2")
     val address2: String? = null,
     @SerializedName("city")
-    val city: String = "",
+    val city: String ? = null,
     @SerializedName("state")
-    val state: String = "",
+    val state: String ? = null,
     @SerializedName("postcode")
-    val postcode: String = "",
+    val postcode: String ? = null,
     @SerializedName("country")
-    val country: String = ""
+    val country: String ? = null,
 )

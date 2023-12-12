@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class OrganizationDto(
     @SerializedName("href")
-    val href: String = ""
+    val href: String? = null,
 )
