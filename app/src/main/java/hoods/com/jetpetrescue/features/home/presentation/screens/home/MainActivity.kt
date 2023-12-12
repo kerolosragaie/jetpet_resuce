@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.features.presentation.screens.home
+package hoods.com.jetpetrescue.features.home.presentation.screens.home
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
 import hoods.com.jetpetrescue.core.functions.Screen
 import hoods.com.jetpetrescue.core.theme.JetPetTheme
-import hoods.com.jetpetrescue.features.presentation.screens.details.DetailsScreen
+import hoods.com.jetpetrescue.features.home.presentation.screens.details.DetailsScreen
 
 
 class MainActivity : ComponentActivity() {

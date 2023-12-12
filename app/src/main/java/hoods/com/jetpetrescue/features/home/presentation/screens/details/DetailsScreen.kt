@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.features.presentation.screens.details
+package hoods.com.jetpetrescue.features.home.presentation.screens.details
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -11,11 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
-import hoods.com.jetpetrescue.features.presentation.screens.details.components.DetailsTopBar
-import hoods.com.jetpetrescue.features.presentation.screens.details.components.OwnerInfoCard
-import hoods.com.jetpetrescue.features.presentation.screens.details.components.PetBasicInfoItem
-import hoods.com.jetpetrescue.features.presentation.screens.details.components.PetInfoCard
-import hoods.com.jetpetrescue.features.presentation.screens.details.components.PetStoryItem
+import hoods.com.jetpetrescue.features.home.presentation.screens.details.components.DetailsTopBar
+import hoods.com.jetpetrescue.features.home.presentation.screens.details.components.OwnerInfoCard
+import hoods.com.jetpetrescue.features.home.presentation.screens.details.components.PetBasicInfoItem
+import hoods.com.jetpetrescue.features.home.presentation.screens.details.components.PetInfoCard
+import hoods.com.jetpetrescue.features.home.presentation.screens.details.components.PetStoryItem
 
 @Composable
 fun DetailsScreen(

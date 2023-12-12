@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.features.presentation.screens.details.components
+package hoods.com.jetpetrescue.features.home.presentation.screens.details.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

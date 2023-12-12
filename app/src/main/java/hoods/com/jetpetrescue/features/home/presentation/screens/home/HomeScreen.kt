@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.features.presentation.screens.home
+package hoods.com.jetpetrescue.features.home.presentation.screens.home
 
 
 import androidx.compose.foundation.lazy.LazyColumn
@@ -7,8 +7,8 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
-import hoods.com.jetpetrescue.features.presentation.screens.home.components.HomeTopBar
-import hoods.com.jetpetrescue.features.presentation.screens.home.components.PetInfoItem
+import hoods.com.jetpetrescue.features.home.presentation.screens.home.components.HomeTopBar
+import hoods.com.jetpetrescue.features.home.presentation.screens.home.components.PetInfoItem
 
 @Composable
 fun HomeScreen(
