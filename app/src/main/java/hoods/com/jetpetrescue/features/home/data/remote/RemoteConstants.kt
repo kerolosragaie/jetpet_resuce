@@ -9,5 +9,5 @@ object RemoteConstants {
     const val CLIENT_ID = "client_id"
     const val CLIENT_SECRET = "client_secret"
     const val GRANT_TYPE = "grant_type"
-    const val CLIENT_CREDENTIALS = "client_Credentials"
+    const val CLIENT_CREDENTIALS = "client_credentials"
 }

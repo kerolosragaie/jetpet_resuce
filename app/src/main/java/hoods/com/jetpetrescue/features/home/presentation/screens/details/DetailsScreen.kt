@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
+import hoods.com.jetpetrescue.features.home.domain.models.Animal
 import hoods.com.jetpetrescue.features.home.presentation.screens.details.components.DetailsTopBar
 import hoods.com.jetpetrescue.features.home.presentation.screens.details.components.OwnerInfoCard
 import hoods.com.jetpetrescue.features.home.presentation.screens.details.components.PetBasicInfoItem
@@ -19,11 +20,10 @@ import hoods.com.jetpetrescue.features.home.presentation.screens.details.compone
 
 @Composable
 fun DetailsScreen(
-    index: Int,
+    animal: Animal,
     onClickArrowBack: () -> Unit,
     onClickAdopt: () -> Unit,
 ) {
-    val pet = DummyPetDataSource.dogList[index]
 
     Scaffold(
         topBar = {
@@ -34,16 +34,16 @@ fun DetailsScreen(
     ) { padding ->
         LazyColumn(contentPadding = padding) {
             item {
-                PetBasicInfoItem(pet = pet)
+                PetBasicInfoItem(animal = animal)
             }
             item {
-                PetStoryItem(description = pet.description)
+                PetStoryItem(description = animal.description.toString())
             }
             item {
-                PetInfoCard(pet = pet)
+                PetInfoCard(animal = animal)
             }
             item {
-                OwnerInfoCard(owner = pet.owner) {
+                OwnerInfoCard(owner = animal.animalOwnerContact!!) {
 
                 }
             }
@@ -65,8 +65,10 @@ fun DetailsScreen(
 @Preview(showSystemUi = true)
 @Composable
 fun PrevDetailsScreen() {
+    val animal = DummyPetDataSource.dogList[0]
+
     DetailsScreen(
-        index = 0,
+        animal = animal,
         onClickArrowBack = {},
         onClickAdopt = {},
     )

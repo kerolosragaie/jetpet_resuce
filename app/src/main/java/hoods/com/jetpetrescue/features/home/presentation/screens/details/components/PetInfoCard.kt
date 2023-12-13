@@ -21,10 +21,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
-import hoods.com.jetpetrescue.core.data.model.Pet
+import hoods.com.jetpetrescue.features.home.domain.models.Animal
 
 @Composable
-fun PetInfoCard(pet: Pet) {
+fun PetInfoCard(animal: Animal) {
     Column {
 
         Text(
@@ -46,7 +46,7 @@ fun PetInfoCard(pet: Pet) {
         ) {
             InfoCard(
                 primaryText = "Age",
-                secondaryText = pet.age,
+                secondaryText = animal.age.toString(),
                 modifier = Modifier
                     .weight(1f)
                     .padding(4.dp)
@@ -54,7 +54,7 @@ fun PetInfoCard(pet: Pet) {
 
             InfoCard(
                 primaryText = "Color",
-                secondaryText = pet.color,
+                secondaryText = "${animal.colors?.primary.toString()}, ${animal.colors?.secondary.toString()}, ${animal.colors?.tertiary.toString()}",
                 modifier = Modifier
                     .weight(1f)
                     .padding(4.dp)
@@ -62,7 +62,7 @@ fun PetInfoCard(pet: Pet) {
 
             InfoCard(
                 primaryText = "Breed",
-                secondaryText = pet.breed,
+                secondaryText = animal.breeds?.primary.toString(),
                 modifier = Modifier
                     .weight(1f)
                     .padding(4.dp)
@@ -110,6 +110,6 @@ private fun InfoCard(
 @Composable
 fun PrevPetDetailsItem() {
     PetInfoCard(
-        pet = DummyPetDataSource.dogList.random()
+        animal = DummyPetDataSource.dogList.random()
     )
 }

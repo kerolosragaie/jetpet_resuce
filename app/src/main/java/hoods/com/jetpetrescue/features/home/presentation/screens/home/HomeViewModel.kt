@@ -46,6 +46,10 @@ class HomeViewModel(
         }
     }
 
+    fun onInfiniteScrollChange(start: Boolean) {
+        uiState = uiState.copy(startInfiniteScrolling = start)
+    }
+
     private fun getPage(pageSource: List<Animal>?): Int {
         return if (pageSource?.isEmpty() == true) {
             pageSource[pageSource.lastIndex].currentPage + 1

@@ -11,6 +11,7 @@ import hoods.com.jetpetrescue.features.home.data.remote.token.AccessTokenProvide
 import hoods.com.jetpetrescue.features.home.data.repo.PetRepoImpl
 import hoods.com.jetpetrescue.features.home.domain.repo.PetRepo
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -20,9 +21,11 @@ object Graph {
     lateinit var apiService: ApiService
     lateinit var accessTokenProvider: AccessTokenProvider
     lateinit var petRepo: PetRepo
+    private val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient
             .Builder()
+            .addInterceptor(logger)
             .addInterceptor(AuthInterceptorImpl(accessTokenProvider))
             .authenticator(AccessTokenAuthorization(accessTokenProvider))
             .build()

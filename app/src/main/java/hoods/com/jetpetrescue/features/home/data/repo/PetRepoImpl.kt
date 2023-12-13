@@ -17,7 +17,7 @@ class PetRepoImpl(
             ResourceHolder.Success(animalsList)
         } catch (e: Exception) {
             e.printStackTrace()
-            ResourceHolder.Error(e.cause!!)
+            ResourceHolder.Error(e)
         }
     }
 }

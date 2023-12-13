@@ -7,6 +7,7 @@ import hoods.com.jetpetrescue.features.home.data.remote.RemoteConstants.CLIENT_C
 import hoods.com.jetpetrescue.features.home.data.remote.RemoteConstants.CLIENT_ID
 import hoods.com.jetpetrescue.features.home.data.remote.RemoteConstants.CLIENT_SECRET
 import hoods.com.jetpetrescue.features.home.data.remote.RemoteConstants.GRANT_TYPE
+import hoods.com.jetpetrescue.features.home.data.remote.RemoteConstants.SECRET_KEY
 import hoods.com.jetpetrescue.features.home.data.remote.models.AccessToken
 import hoods.com.jetpetrescue.features.home.data.remote.models.AnimalsDto
 import retrofit2.http.Field
@@ -26,7 +27,7 @@ interface ApiService {
     @FormUrlEncoded
     suspend fun getAuthToken(
         @Field(CLIENT_ID) clientId: String = API_KEY,
-        @Field(CLIENT_SECRET) clientSecret: String = CLIENT_SECRET,
+        @Field(CLIENT_SECRET) clientSecret: String = SECRET_KEY,
         @Field(GRANT_TYPE) grantType: String = CLIENT_CREDENTIALS,
     ): AccessToken
 

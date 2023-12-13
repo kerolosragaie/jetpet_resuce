@@ -49,6 +49,6 @@ fun PetStoryItem(
 @Composable
 fun PrevPetStory() {
     PetStoryItem(
-        description = DummyPetDataSource.dogList.random().description
+        description = DummyPetDataSource.dogList.random().description.toString()
     )
 }

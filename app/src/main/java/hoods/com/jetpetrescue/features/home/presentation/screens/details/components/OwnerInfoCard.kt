@@ -32,11 +32,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import hoods.com.jetpetrescue.R
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
-import hoods.com.jetpetrescue.core.data.model.Owner
+import hoods.com.jetpetrescue.features.home.domain.models.AnimalOwnerContact
 
 @Composable
 fun OwnerInfoCard(
-    owner: Owner,
+    owner: AnimalOwnerContact,
     onClickMessengerBttn: () -> Unit,
 ) {
     Row(
@@ -50,7 +50,7 @@ fun OwnerInfoCard(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Image(
-                painter = painterResource(id = owner.image),
+                painter = painterResource(id = R.drawable.placeholder_ic),
                 contentDescription = null,
                 modifier = Modifier
                     .size(60.dp)
@@ -60,7 +60,7 @@ fun OwnerInfoCard(
             Spacer(modifier = Modifier.width(8.dp))
             Column {
                 Text(
-                    text = owner.name,
+                    text = owner.email.toString(),
                     color = MaterialTheme.colors.onSurface,
                     style = MaterialTheme.typography.subtitle1,
                     fontWeight = FontWeight.W600,
@@ -68,7 +68,7 @@ fun OwnerInfoCard(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = owner.basicInfo,
+                    text = owner.address.toString(),
                     color = MaterialTheme.colors.onSurface,
                     style = MaterialTheme.typography.caption,
                     textAlign = TextAlign.Start,
@@ -102,7 +102,7 @@ fun OwnerInfoCard(
 @Composable
 fun PrevOwnerInfoCard() {
     OwnerInfoCard(
-        owner = DummyPetDataSource.dogList.random().owner
+        owner = DummyPetDataSource.dogList.random().animalOwnerContact!!
     ){
 
     }

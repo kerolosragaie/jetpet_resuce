@@ -9,5 +9,5 @@ data class ColorsDto(
     @SerializedName("secondary")
     val secondary: String? = null,
     @SerializedName("tertiary")
-    val tertiary: Any? = null
+    val tertiary: String? = null
 )
