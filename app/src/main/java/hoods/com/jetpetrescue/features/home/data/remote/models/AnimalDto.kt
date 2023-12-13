@@ -43,7 +43,7 @@ data class AnimalDto(
     @SerializedName("primary_photo_cropped")
     val primaryPhotoCropped: PrimaryPhotoCroppedDto? = null,
     @SerializedName("videos")
-    val videos: List<String> ? = null,
+    val videos: List<Any> ? = null,
     @SerializedName("status")
     val status: String ? = null,
     @SerializedName("status_changed_at")

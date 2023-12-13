@@ -1,7 +1,6 @@
 package hoods.com.jetpetrescue.core.data
 
 
-import androidx.compose.ui.graphics.Color
 import hoods.com.jetpetrescue.features.home.domain.models.Animal
 import hoods.com.jetpetrescue.features.home.domain.models.AnimalOwnerContact
 import hoods.com.jetpetrescue.features.home.domain.models.Breeds
@@ -22,13 +21,13 @@ object DummyPetDataSource {
             age = "Adult",
             gender = "Male",
             colors = Colors(
-                primary = Color.Black.toString(),
-                secondary = Color.Red.toString(),
-                tertiary = Color.White.toString(),
+                primary = "Black",
+                secondary = "Red",
+                tertiary = "Green",
             ),
             breeds = Breeds(
-                primary = "Canada",
-                secondary = null,
+                primary = "Mixed",
+                secondary = "Breed",
                 mixed = false,
                 unknown = false
             ),

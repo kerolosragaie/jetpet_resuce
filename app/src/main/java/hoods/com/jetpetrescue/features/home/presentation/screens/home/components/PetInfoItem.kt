@@ -58,8 +58,11 @@ fun PetInfoItem(
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
 
-            Row {
-                if(isLoadingImage){
+            Row(
+                modifier = Modifier
+                    .weight(1f)
+            ) {
+                if (isLoadingImage) {
                     CircularProgressIndicator()
                 }
                 AsyncImage(
@@ -71,6 +74,7 @@ fun PetInfoItem(
                     else
                         null,
                     placeholder = painterResource(id = R.drawable.placeholder_ic),
+                    error = painterResource(id = R.drawable.placeholder_ic),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     alignment = Alignment.CenterStart,
