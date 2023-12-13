@@ -39,7 +39,7 @@ data class AnimalDto(
     @SerializedName("organization_animal_id")
     val organizationAnimalId: String? = null,
     @SerializedName("photos")
-    val photos: List<PhotoDto>? = null,
+    val photos: List<AnimalPhotoDto>? = null,
     @SerializedName("primary_photo_cropped")
     val primaryPhotoCropped: PrimaryPhotoCroppedDto? = null,
     @SerializedName("videos")
