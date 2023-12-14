@@ -46,8 +46,7 @@ fun PetBasicInfoItem(animal: Animal) {
                 animal.photos.first().medium
             else
                 null,
-            placeholder = painterResource(id = R.drawable.placeholder_ic),
-            error = painterResource(id = R.drawable.placeholder_ic),
+            error = painterResource(id = R.drawable.wiggle_logo),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             alignment = Alignment.CenterStart,

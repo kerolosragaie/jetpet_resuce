@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object Graph {
     private lateinit var tokenStoragePreference: StoragePreference
     lateinit var apiService: ApiService
-    lateinit var accessTokenProvider: AccessTokenProvider
+    private lateinit var accessTokenProvider: AccessTokenProvider
     lateinit var petRepo: PetRepo
     private val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     private val okHttpClient: OkHttpClient by lazy {
@@ -31,7 +31,7 @@ object Graph {
             .build()
     }
 
-    fun provide(context: Context) {
+    fun init(context: Context) {
         tokenStoragePreference = StoragePreference(context)
         accessTokenProvider = AccessTokenProviderImpl(tokenStoragePreference)
         apiService = provideApiService()

@@ -62,19 +62,20 @@ fun PetInfoItem(
                 modifier = Modifier
                     .weight(1f)
             ) {
-                if (isLoadingImage) {
-                    CircularProgressIndicator()
-                }
+                if (isLoadingImage)
+                    CircularProgressIndicator(
+                        modifier = Modifier
+                            .size(50.dp),
+                    )
                 AsyncImage(
                     modifier = Modifier
-                        .size(80.dp, 80.dp)
+                        .size(80.dp)
                         .clip(RoundedCornerShape(16.dp)),
                     model = if (animal.photos!!.isNotEmpty())
                         animal.photos.first().medium
                     else
                         null,
-                    placeholder = painterResource(id = R.drawable.placeholder_ic),
-                    error = painterResource(id = R.drawable.placeholder_ic),
+                    error = painterResource(id = R.drawable.wiggle_logo),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     alignment = Alignment.CenterStart,
