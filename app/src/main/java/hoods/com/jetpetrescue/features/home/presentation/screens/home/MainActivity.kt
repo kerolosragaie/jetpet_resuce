@@ -10,9 +10,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import hoods.com.jetpetrescue.core.navigation.NavGraph
 import hoods.com.jetpetrescue.core.theme.JetPetTheme
-import hoods.com.jetpetrescue.core.utils.Screen
-import hoods.com.jetpetrescue.features.home.presentation.screens.details.DetailsScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -20,45 +20,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val homeViewModel by viewModels<HomeViewModel>()
-            var currentScreen by remember { mutableStateOf(Screen.Home) }
-            var selectedIndex by remember { mutableStateOf(-1) }
             var isDarkTheme by remember { mutableStateOf(false) }
+            val navController = rememberNavController()
 
             JetPetTheme(
                 darkTheme = isDarkTheme,
             ) {
-                when (currentScreen) {
-                    Screen.Home -> {
-                        HomeScreen(
-                            uiState = homeViewModel.uiState,
-                            onSwitchToggle = {
-                                isDarkTheme = !isDarkTheme
-                            },
-                            onPetItemClicked = { index ->
-                                currentScreen = Screen.Details
-                                selectedIndex = index
-                            },
-                            onLoadNextPage = {
-                                homeViewModel.loadNextAnimalsPage()
-                            },
-                            onInfiniteScrollingChange = {
-                                homeViewModel.onInfiniteScrollChange(it)
-                            }
-                        )
-                    }
-
-                    Screen.Details -> {
-                        DetailsScreen(
-                            animal = homeViewModel.uiState.animals.data?.get(selectedIndex)!!,
-                            onClickArrowBack = {
-                                currentScreen = Screen.Home
-                            },
-                            onClickAdopt = {
-
-                            },
-                        )
-                    }
-                }
+                NavGraph(
+                    navController = navController,
+                    onThemeChange = { isDarkTheme = !isDarkTheme },
+                    homeViewModel = homeViewModel,
+                )
             }
         }
     }

@@ -16,5 +16,6 @@ data class Animal(
     val status: String?,
     val tags: List<String>?,
     val type: String?,
+    val url: String?,
     val currentPage: Int,
 )

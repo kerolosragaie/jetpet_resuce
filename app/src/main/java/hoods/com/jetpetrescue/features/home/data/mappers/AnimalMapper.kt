@@ -21,4 +21,5 @@ fun AnimalDto.fromDtoToModel(currentPage: Int?): Animal = Animal(
     status = status,
     tags = tags,
     type = type,
+    url = url,
 )
