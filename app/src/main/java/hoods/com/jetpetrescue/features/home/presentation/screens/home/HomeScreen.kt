@@ -20,8 +20,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import hoods.com.jetpetrescue.R
-import hoods.com.jetpetrescue.core.components.ErrorScreen
-import hoods.com.jetpetrescue.core.components.LoadingScreen
+import hoods.com.jetpetrescue.core.screens.ErrorScreen
+import hoods.com.jetpetrescue.core.screens.LoadingScreen
 import hoods.com.jetpetrescue.core.utils.ResourceHolder
 import hoods.com.jetpetrescue.features.home.presentation.screens.home.components.HomeTopBar
 import hoods.com.jetpetrescue.features.home.presentation.screens.home.components.PetInfoItem

@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import hoods.com.jetpetrescue.R
 import hoods.com.jetpetrescue.core.components.GenderTag
-import hoods.com.jetpetrescue.core.components.LoadingScreen
+import hoods.com.jetpetrescue.core.screens.LoadingScreen
 import hoods.com.jetpetrescue.core.components.LocationTag
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
 import hoods.com.jetpetrescue.features.home.domain.models.Animal

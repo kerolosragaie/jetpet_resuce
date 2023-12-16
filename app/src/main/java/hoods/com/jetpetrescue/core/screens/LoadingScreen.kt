@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.core.components
+package hoods.com.jetpetrescue.core.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize

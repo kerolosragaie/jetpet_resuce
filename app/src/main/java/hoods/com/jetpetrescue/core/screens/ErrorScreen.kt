@@ -1,4 +1,4 @@
-package hoods.com.jetpetrescue.core.components
+package hoods.com.jetpetrescue.core.screens
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
