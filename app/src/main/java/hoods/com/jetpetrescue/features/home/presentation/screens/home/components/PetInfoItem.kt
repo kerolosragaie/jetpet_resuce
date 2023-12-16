@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -31,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import hoods.com.jetpetrescue.R
 import hoods.com.jetpetrescue.core.components.GenderTag
+import hoods.com.jetpetrescue.core.components.LoadingScreen
 import hoods.com.jetpetrescue.core.components.LocationTag
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
 import hoods.com.jetpetrescue.features.home.domain.models.Animal
@@ -63,10 +63,8 @@ fun PetInfoItem(
                     .weight(1f)
             ) {
                 if (isLoadingImage)
-                    CircularProgressIndicator(
-                        modifier = Modifier
-                            .size(50.dp),
-                    )
+                    LoadingScreen(true)
+
                 AsyncImage(
                     modifier = Modifier
                         .size(80.dp)

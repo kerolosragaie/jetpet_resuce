@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -25,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import hoods.com.jetpetrescue.R
 import hoods.com.jetpetrescue.core.components.GenderTag
+import hoods.com.jetpetrescue.core.components.LoadingScreen
 import hoods.com.jetpetrescue.core.components.LocationTag
 import hoods.com.jetpetrescue.core.data.DummyPetDataSource
 import hoods.com.jetpetrescue.features.home.domain.models.Animal
@@ -35,9 +35,9 @@ fun PetBasicInfoItem(animal: Animal) {
     var isLoadingImage by remember { mutableStateOf(false) }
 
     Column {
-        if (isLoadingImage) {
-            CircularProgressIndicator()
-        }
+        if (isLoadingImage)
+            LoadingScreen(true)
+
         AsyncImage(
             modifier = Modifier
                 .fillMaxWidth()

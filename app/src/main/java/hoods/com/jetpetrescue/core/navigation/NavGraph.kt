@@ -27,19 +27,13 @@ fun NavGraph(
             route = Screen.Home.route,
         ) {
             HomeScreen(
-                uiState = homeViewModel.uiState,
                 onSwitchToggle = onThemeChange,
                 onPetItemClicked = { petId ->
                     navController.navigate(
                         Screen.Details.passPetId(petId)
                     )
                 },
-                onLoadNextPage = {
-                    homeViewModel.loadNextAnimalsPage()
-                },
-                onInfiniteScrollingChange = {
-                    homeViewModel.onInfiniteScrollChange(it)
-                },
+                homeViewModel = homeViewModel,
             )
         }
 

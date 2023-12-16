@@ -41,16 +41,12 @@ class MainActivity : ComponentActivity() {
 fun DefaultPreview() {
     JetPetTheme {
         HomeScreen(
-            uiState = UiState(),
             onSwitchToggle = {
             },
-            onPetItemClicked = { index ->
+            onPetItemClicked = { _ ->
 
             },
-            onLoadNextPage = {
-            },
-            onInfiniteScrollingChange = {
-            }
+            homeViewModel = HomeViewModel(),
         )
     }
 }

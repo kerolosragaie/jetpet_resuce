@@ -1,7 +1,6 @@
 package hoods.com.jetpetrescue.features.home.presentation.screens.details.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,6 +27,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import hoods.com.jetpetrescue.R
@@ -47,6 +47,7 @@ fun OwnerInfoCard(
             .padding(16.dp),
     ) {
         Row(
+            modifier = Modifier.weight(6f),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Image(
@@ -65,6 +66,8 @@ fun OwnerInfoCard(
                     style = MaterialTheme.typography.subtitle1,
                     fontWeight = FontWeight.W600,
                     textAlign = TextAlign.Start,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
@@ -72,16 +75,17 @@ fun OwnerInfoCard(
                     color = MaterialTheme.colors.onSurface,
                     style = MaterialTheme.typography.caption,
                     textAlign = TextAlign.Start,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
                 )
             }
         }
 
         Surface(
             modifier = Modifier
-                .size(40.dp)
+                .weight(1f)
                 .clickable {}
-                .clip(CircleShape)
-                .background(Color.Red.copy(.2f)),
+                .clip(CircleShape),
             shape = CircleShape,
             color = MaterialTheme.colors.primary,
             contentColor = MaterialTheme.colors.onPrimary,
@@ -103,7 +107,7 @@ fun OwnerInfoCard(
 fun PrevOwnerInfoCard() {
     OwnerInfoCard(
         owner = DummyPetDataSource.dogList.random().animalOwnerContact!!
-    ){
+    ) {
 
     }
 }
