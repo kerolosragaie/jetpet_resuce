@@ -1,6 +1,7 @@
 package hoods.com.jetpetrescue.core.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -52,7 +53,7 @@ fun NavGraph(
             ),
         ) { backStackEntry ->
             val petId = backStackEntry.arguments?.getInt(PET_ID)!!
-            val selectedPet = homeViewModel.uiState.animals.data?.get(petId)
+            val selectedPet = homeViewModel.uiState.collectAsState().value.animals.data?.get(petId)
             val context = LocalContext.current
 
             if (selectedPet != null) {

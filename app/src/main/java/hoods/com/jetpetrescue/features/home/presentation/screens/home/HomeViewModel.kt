@@ -1,9 +1,6 @@
 package hoods.com.jetpetrescue.features.home.presentation.screens.home
 
 import android.util.Log
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import hoods.com.jetpetrescue.core.utils.ResourceHolder
@@ -12,6 +9,7 @@ import hoods.com.jetpetrescue.features.home.domain.models.Animal
 import hoods.com.jetpetrescue.features.home.domain.pagination.LoadingStateListener
 import hoods.com.jetpetrescue.features.home.domain.pagination.PetPaginationImpl
 import hoods.com.jetpetrescue.features.home.domain.repo.PetRepo
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
@@ -22,12 +20,13 @@ class HomeViewModel(
         const val TAG = "HomeViewModel"
     }
 
-    var uiState by mutableStateOf(UiState())
+    val uiState: MutableStateFlow<UiState> = MutableStateFlow(UiState())
+
     private val petPagination = PetPaginationImpl(
-        initialKey = getPage(uiState.animals.data),
+        initialKey = getPage(uiState.value.animals.data),
         loadingState = this,
         onRequest = { page ->
-            if (uiState.isFetchingPet) return@PetPaginationImpl ResourceHolder.Loading()
+            if (uiState.value.isFetchingPet) return@PetPaginationImpl ResourceHolder.Loading()
             val animals = fetchAnimals(page)
             animals
         },
@@ -47,7 +46,7 @@ class HomeViewModel(
     }
 
     fun onInfiniteScrollChange(start: Boolean) {
-        uiState = uiState.copy(
+        uiState.value = uiState.value.copy(
             startInfiniteScrolling = start,
             moreBttnVisible = !start,
         )
@@ -64,7 +63,7 @@ class HomeViewModel(
         repo.getAnimals(page)
 
     override fun onLoadingStateChanged(isLoading: Boolean) {
-        uiState = uiState.copy(isFetchingPet = isLoading)
+        uiState.value = uiState.value.copy(isFetchingPet = isLoading)
     }
 
     override fun onError(error: Throwable) {
@@ -72,7 +71,7 @@ class HomeViewModel(
     }
 
     override fun onDataFetched(data: ResourceHolder<List<Animal>>) {
-        uiState = uiState.updateAnimals(newData = data)
+        uiState.value = uiState.value.updateAnimals(newData = data)
     }
 
     private fun UiState.updateAnimals(newData: ResourceHolder<List<Animal>>): UiState {
