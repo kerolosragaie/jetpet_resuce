@@ -10,6 +10,7 @@ import hoods.com.jetpetrescue.features.home.domain.pagination.LoadingStateListen
 import hoods.com.jetpetrescue.features.home.domain.pagination.PetPaginationImpl
 import hoods.com.jetpetrescue.features.home.domain.repo.PetRepo
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
@@ -20,13 +21,14 @@ class HomeViewModel(
         const val TAG = "HomeViewModel"
     }
 
-    val uiState: MutableStateFlow<UiState> = MutableStateFlow(UiState())
+    private val _uiState: MutableStateFlow<UiState> = MutableStateFlow(UiState())
+    val uiState: StateFlow<UiState> = _uiState
 
     private val petPagination = PetPaginationImpl(
-        initialKey = getPage(uiState.value.animals.data),
+        initialKey = getPage(_uiState.value.animals.data),
         loadingState = this,
         onRequest = { page ->
-            if (uiState.value.isFetchingPet) return@PetPaginationImpl ResourceHolder.Loading()
+            if (_uiState.value.isFetchingPet) return@PetPaginationImpl ResourceHolder.Loading()
             val animals = fetchAnimals(page)
             animals
         },
@@ -46,7 +48,7 @@ class HomeViewModel(
     }
 
     fun onInfiniteScrollChange(start: Boolean) {
-        uiState.value = uiState.value.copy(
+        _uiState.value = _uiState.value.copy(
             startInfiniteScrolling = start,
             moreBttnVisible = !start,
         )
@@ -63,7 +65,7 @@ class HomeViewModel(
         repo.getAnimals(page)
 
     override fun onLoadingStateChanged(isLoading: Boolean) {
-        uiState.value = uiState.value.copy(isFetchingPet = isLoading)
+        _uiState.value = _uiState.value.copy(isFetchingPet = isLoading)
     }
 
     override fun onError(error: Throwable) {
@@ -71,7 +73,7 @@ class HomeViewModel(
     }
 
     override fun onDataFetched(data: ResourceHolder<List<Animal>>) {
-        uiState.value = uiState.value.updateAnimals(newData = data)
+        _uiState.value = _uiState.value.updateAnimals(newData = data)
     }
 
     private fun UiState.updateAnimals(newData: ResourceHolder<List<Animal>>): UiState {
